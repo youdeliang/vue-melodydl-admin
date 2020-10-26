@@ -1,0 +1,13 @@
+node_modules
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+build/*.js
+src/assets
+public
+dist
+/types/shims
+/src/types/*.ts
+vue.config.js
