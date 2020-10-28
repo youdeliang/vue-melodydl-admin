@@ -1,9 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-  </div>
-  <router-view />
+  <ConfigProvider :locale="zhCN" :transformCellText="transformCellText" v-bind="lockOn">
+    <router-view />
+  </ConfigProvider>
 </template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue';
+  import { ConfigProvider } from 'ant-design-vue';
+  import { useConfigProvider } from './useApp';
+  import zhCN from 'ant-design-vue/es/locale/zh_CN';
+  import moment from 'moment';
+  import 'moment/locale/zh-cn';
+
+  moment.locale('zh-cn');
+  export default defineComponent({
+    name: 'App',
+    components: { ConfigProvider },
+    setup() {
+      const lockOn = {};
+      const transformCellText = useConfigProvider();
+      return {
+        zhCN,
+        lockOn,
+        transformCellText,
+      };
+    },
+  });
+</script>
 
 <style lang="less">
   #app {

@@ -1,8 +1,16 @@
-import { createStore } from 'vuex'
+import { App } from 'vue';
 
-export default createStore({
+import { createStore } from 'vuex';
+
+const store = createStore({
   state: {},
   mutations: {},
   actions: {},
   modules: {},
-})
+});
+
+export function setupStore(app: App<Element>) {
+  app.use(store);
+}
+
+export default store;

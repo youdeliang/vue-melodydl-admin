@@ -13,6 +13,7 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   }
 };
