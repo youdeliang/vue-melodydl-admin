@@ -5,3 +5,8 @@ declare module '*.vue' {
 }
 
 declare module 'ant-design-vue/es/locale/zh_CN';
+
+declare module '*.png' {
+  const src: string;
+  export default src;
+}

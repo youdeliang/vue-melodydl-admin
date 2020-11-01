@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 
 import App from './App.vue';
-import router from './router';
+import router, { setupRouter } from './router';
 import { setupStore } from '@/store';
 import { setupAntd } from '@/setup/ant-design-vue';
 
@@ -13,8 +13,10 @@ setupAntd(app);
 // store
 setupStore(app);
 
-app.use(router);
+setupRouter(app);
 
-app.mount('#app');
+router.isReady().then(() => {
+  app.mount('#app');
+});
 
 export default app;
